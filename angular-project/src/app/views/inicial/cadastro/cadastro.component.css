@@ -1,0 +1,17 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25%;
+    max-width: 400px;
+}
+img {
+    width: 125px;
+    height: 100px;
+}
+mat-card-header {
+    display: block;
+    text-align: center;
+}
+mat-card-footer {
+    padding-bottom: 30px;
+}

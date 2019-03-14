@@ -1,0 +1,35 @@
+
+<mat-card align="center">
+    <div  *ngIf="fotoChoosed" class="text-center pt-4">
+        <a (click)="inputao.click()"><img style="width: 150px;height: 150px;border-radius: 50%" [src]="DomSanitizer.bypassSecurityTrustUrl(fotoChoosed)" (error)="onError()"></a>
+        <div>
+            <label  class="btn btn-info">
+                <input #inputao type="file" style="display: none;" name="perfil" (change)="getPhoto($event)">
+            </label>
+        </div>
+    </div>
+    <div class="text-center pt-4" *ngIf="!fotoChoosed">
+        <a (click)="inputao.click()"><img style="width: 150px;height: 150px;border-radius: 50%" src="assets/img/avatar.png"></a>
+        <div >
+            <label class="btn btn-info">
+                <input #inputao type="file" style="display: none;" name="perfil" (change)="getPhoto($event)">
+            </label>
+        </div>
+    </div>
+    <form #fCadastrar="ngForm" (ngSubmit)="att(fCadastrar)">
+        <mat-card-content style="padding-top: 50px">
+            <mat-form-field>
+                <input matInput name="nome" type="text" placeholder="Nome Completo" [ngModel]="usuario.nome" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput name="email" type="email" placeholder="Email" [ngModel]="usuario.email" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput name="senha" type="password" placeholder="Senha" ngModel >
+            </mat-form-field><br>
+        </mat-card-content>
+        <mat-card-footer>
+            <button type="submit" mat-button color="primary">Salvar</button>
+        </mat-card-footer>
+    </form>
+</mat-card>

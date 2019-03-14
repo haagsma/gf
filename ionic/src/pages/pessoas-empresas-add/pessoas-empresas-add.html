@@ -1,0 +1,24 @@
+<nav-pop></nav-pop>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <form #fCadastro="ngForm" (ngSubmit)="cadastrar(fCadastro)">
+        <div class="form-group text-center">
+          <label class="font-weight-bolder">Nome</label>
+          <input class="form-control rounded-pill" type="text" name="nome" placeholder="Nome Completo" ngModel required>
+        </div>
+        <div class="form-group text-center">
+          <label class="font-weight-bolder">Descrição</label>
+          <input class="form-control rounded-pill" type="text" name="descricao" placeholder="pessoas da familia" ngModel>
+        </div>
+        <div class="form-group text-center">
+          <label class="font-weight-bolder">Situação</label>
+          <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control rounded-pill" type="text" name="valor" placeholder="2,00" ngModel >
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-info btn-lg text-white rounded-pill">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

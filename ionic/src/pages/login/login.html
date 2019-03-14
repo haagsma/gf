@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="painel-login">
+    <div class="card">
+      <div class="card-body">
+        <div class="text-center">
+          <img class="logo" src="assets/img/logo2.png">
+        </div>
+        <form #fLogin="ngForm" (ngSubmit)="login(fLogin)">
+          <div class="form-group text-center">
+            <label class="font-weight-bolder">Email</label>
+            <input class="form-control rounded-pill" type="text" name="email" placeholder="Email" ngModel required>
+          </div>
+          <div class="form-group text-center">
+            <label class="font-weight-bolder">Senha</label>
+            <input class="form-control rounded-pill" type="password" name="senha" placeholder="*******" ngModel required>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-info btn-lg text-white rounded-pill">Entrar</button>
+          </div>
+          <div class="form-group text-center">
+            <a href="#" (click)="cadastro()" class="btn btn-info btn-lg text-white rounded-pill">Cadastrar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

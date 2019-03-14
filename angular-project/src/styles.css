@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.text-success {
+    color: green;
+}
+.text-danger {
+    color: red;
+}
+.mt-2{
+    margin-top: 2px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+mat-card {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+mat-card-footer {
+    padding-bottom: 20px;
+}
+.btn-fab {
+    z-index: 99;
+    position: fixed !important;
+    top: 80px;
+    right: 10px;
+    margin: 20px !important;
+    background-color: limegreen !important;
+}

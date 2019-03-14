@@ -1,0 +1,18 @@
+<mat-card align="center">
+    <form #fCadastrar="ngForm" (ngSubmit)="cadastrar(fCadastrar)">
+        <mat-card-content>
+            <mat-form-field>
+                <input matInput name="nome" type="text" placeholder="Nome Completo" [(ngModel)]="dados.nome" required>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput name="descricao" type="text" placeholder="Descrição" [(ngModel)]="dados.descricao" ngModel>
+            </mat-form-field><br>
+            <mat-form-field>
+                <input matInput currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" [(ngModel)]="dados.valor"  name="valor" type="text" placeholder="Valor" ngModel>
+            </mat-form-field><br>
+        </mat-card-content>
+        <mat-card-footer>
+            <button type="submit" mat-button color="primary">Salvar</button>
+        </mat-card-footer>
+    </form>
+</mat-card>

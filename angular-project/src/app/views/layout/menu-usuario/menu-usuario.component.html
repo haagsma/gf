@@ -1,0 +1,58 @@
+<mat-sidenav-container>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <img class="logo" src="/assets/img/icon.png">
+            <div class="div-icon-menu">
+                <button (click)="sidenav.toggle()" class="icon-menu" mat-icon-button><mat-icon>menu</mat-icon></button>
+            </div>
+        </mat-toolbar>
+        <div style="margin-top: 100px;height: 100% !important;" >
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+    <mat-sidenav #sidenav  mode="over" >
+            <div class="area-perfil">
+                <div class="text-center pt-4" *ngIf="!fotoChoosed">
+                    <img class="rounded-circle foto-perfil" src="assets/img/avatar.png">
+                </div>
+                <div class="text-center pt-4" *ngIf="fotoChoosed">
+                    <img class="rounded-circle foto-perfil" [src]="DomSanitizer.bypassSecurityTrustUrl(fotoChoosed)" (error)="onError()">
+                </div>
+                <div class="mt-2 text-center text-lg">
+                    <label class="text-white">{{ user.nome }}</label>
+                </div>
+            </div>
+            <div class="list-menu">
+                <ul>
+                    <li class="item-menu mt-2" (click)="home()">
+                        <a href="" class="icone text-primary"><i class="fas fa-home"></i></a>
+                        <a class="link-menu" href="#" >Inicio</a>
+                    </li>
+                    <li class="item-menu mt-2">
+                        <a routerLink="/home/perfil"  (click)="sidenav.toggle()" class="icone "><i class="fas fa-user-circle"></i></a>
+                        <a class="link-menu" routerLink="/home/perfil" (click)="sidenav.toggle()">Perfil</a>
+                    </li>
+                    <li class="item-menu mt-2" >
+                        <a class="icone text-info" (click)="pessoasEmpresas();sidenav.toggle()"><i class="fas fa-users"></i></a>
+                        <a class="link-menu" (click)="pessoasEmpresas();sidenav.toggle()" >Pessoas/Empresas</a>
+                    </li>
+                    <li class="item-menu mt-2">
+                        <a routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone text-success"><i class="fas fa-hand-holding-usd"></i></a>
+                        <a class="link-menu" routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active">Créditos/Débitos</a>
+                    </li>
+                    <li class="item-menu mt-2">
+                        <a  routerLink="/home/controle/gastos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone text-danger"><i class="far fa-credit-card"></i></a>
+                        <a (click)="sidenav.toggle()"  class="link-menu" routerLink="/home/controle/gastos" routerLinkActive="active" >Gastos</a>
+                    </li>
+                    <li class="item-menu mt-2">
+                        <a (click)="sidenav.toggle()"  routerLink="/home/controle/ganhos" routerLinkActive="active" class="icone text-warning"><i class="far fa-money-bill-alt"></i></a>
+                        <a (click)="sidenav.toggle()"  class="link-menu" routerLink="/home/controle/ganhos" routerLinkActive="active">Ganhos</a>
+                    </li>
+                    <!--<li class="item-menu mt-2">
+                      <a href="" class="icone text-primary"><i class="fas fa-question-circle"></i></a>
+                      <a class="link-menu" href="#" >Dúvidas ou Sugestões</a>
+                    </li>-->
+                </ul>
+            </div>
+    </mat-sidenav>
+</mat-sidenav-container>

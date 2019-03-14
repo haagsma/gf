@@ -1,0 +1,24 @@
+<nav-pop></nav-pop>
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-body bg-white rounded">
+      <div class="text-center">
+        <h3 *ngIf="params.tipo == 'gasto'">Adicione o valor do Gasto/Emrpéstimo</h3>
+        <h3 *ngIf="params.tipo == 'pago'">Adicione o valor do Pagamento</h3>
+      </div>
+      <form #fRegistro="ngForm" (ngSubmit)="registrar(fRegistro)">
+        <div class="form-group text-center">
+          <label class="font-weight-bolder">Valor</label>
+          <input class="form-control rounded-pill" type="text" name="valor" placeholder="R$ 35,00" ngModel required currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </div>
+        <div class="form-group text-center">
+          <label class="font-weight-bolder">Descrição</label>
+          <input class="form-control rounded-pill" type="text" name="descricao" placeholder="parcela do carro" ngModel >
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-info rounded-pill" >Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

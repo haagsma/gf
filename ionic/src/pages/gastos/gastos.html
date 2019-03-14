@@ -1,0 +1,17 @@
+<nav-pop></nav-pop>
+<div class="container">
+  <div class="card mt-2" *ngFor="let registro of registros">
+    <div class="card-body">
+      <!--<p class="m-0 p-0">
+        <strong>Ativo: </strong>
+        <strong class="text-success">{{ registro.nome }}</strong>
+      </p>-->
+      <p class="m-0 p-0"><strong>Descrição: </strong>{{ registro.descricao }}</p>
+      <p>
+        <strong>Valor: </strong>
+        <strong  class="text-danger">R$ {{ registro.valor }}</strong>
+      </p>
+      <p class="text-right m-0 p-0"><small class="ml-1">Data: {{ registro.data.slice(0, 10) }}</small></p>
+    </div>
+  </div>
+</div>

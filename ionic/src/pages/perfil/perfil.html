@@ -1,0 +1,55 @@
+<nav-pop></nav-pop>
+<div class="container">
+  <div class="painel-login">
+
+    <div class="card">
+      <div class="card-body">
+        <div  *ngIf="fotoChoosed" class="text-center pt-4">
+          <a href="#"><img class="rounded-circle foto-perfil" [src]="DomSanitizer.bypassSecurityTrustUrl(fotoChoosed)" (error)="onError()"></a>
+          <div class="text-right">
+            <div class="text-center m-auto" *ngIf="loading">
+              <div class="spinner-grow text-success text-center m-auto" role="status" >
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <label  *ngIf="!loading" class="btn btn-info">
+              <i class="fas fa-edit"></i>
+              <input type="file" style="display: none;" name="perfil" (change)="getPhoto($event)">
+            </label>
+          </div>
+        </div>
+        <div class="text-center pt-4" *ngIf="!fotoChoosed">
+          <a   href="#"><img class="rounded-circle foto-perfil" src="assets/img/avatar.png"></a>
+          <div class="text-right" >
+            <div class="text-center m-auto" *ngIf="loading">
+              <div class="spinner-grow text-success text-center m-auto" role="status" >
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <label class="btn btn-info" *ngIf="!loading">
+              <i class="fas fa-edit"></i>
+              <input type="file" style="display: none;" name="perfil" (change)="getPhoto($event)">
+            </label>
+          </div>
+        </div>
+        <form #fPerfil="ngForm" (ngSubmit)="att(fPerfil)">
+          <div class="form-group text-center">
+            <label class="font-weight-bolder">Nome</label>
+            <input class="form-control rounded-pill" type="text" name="nome" placeholder="Nome Completo" required [ngModel]="usuario.nome" >
+          </div>
+          <div class="form-group text-center">
+            <label class="font-weight-bolder">Email</label>
+            <input class="form-control rounded-pill" type="text" name="email" placeholder="email" required [ngModel]="usuario.email" readonly>
+          </div>
+          <div class="form-group text-center">
+            <label class="font-weight-bolder">Senha</label>
+            <input class="form-control rounded-pill" type="text" name="senha" placeholder="*******" ngModel>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-info btn-lg text-white rounded-pill">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<mat-card *ngFor="let registro of registros" class="card mt-2">
+    <mat-card-content class="card-body bg-transparent rounded">
+        <p class="m-0 p-0"><strong>Tipo: </strong>
+            <strong *ngIf="registro.tipo == 'pago'" class="text-success">Pago</strong>
+            <strong *ngIf="registro.tipo == 'gasto'" class="text-danger">Gasto</strong>
+        </p>
+        <p class="m-0 p-0"><strong>Descrição: </strong>{{ registro.descricao }}</p>
+        <p><strong>Valor: </strong>
+            <strong *ngIf="registro.tipo == 'pago'" class="text-success">R$ {{ registro.valor }}</strong>
+            <strong *ngIf="registro.tipo == 'gasto'" class="text-danger">R$ {{ registro.valor }}</strong>
+        </p>
+        <p class="text-right m-0 p-0" style="text-align: right"><small class="ml-1">Data: {{ registro.data.slice(0, 10) }}</small></p>
+    </mat-card-content>
+</mat-card>

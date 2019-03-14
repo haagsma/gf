@@ -1,0 +1,26 @@
+<div class="container">
+    <mat-card>
+        <mat-card-content class="">
+            <div class="text-center pt-4">
+                <a class="text-success text-lg-center"><img class="img-home" src="assets/img/ganhou.jpg"></a>
+            </div>
+            <div class="text-center mt-2">
+                <h5>Você já ganhou</h5>
+                <p><b class="text-success">R$ {{ total.ganho }}</b></p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-content class="">
+            <div class="text-center pt-4">
+                <a class="text-success text-lg-center"><img class="img-home" src="assets/img/gastou.jpg"></a>
+            </div>
+            <div class="text-center mt-2">
+                <h5>Você já gastou</h5>
+                <p><b class="text-danger" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+                    R$ {{ total.gasto }}
+                </b></p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

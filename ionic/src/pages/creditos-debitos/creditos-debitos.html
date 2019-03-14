@@ -1,0 +1,15 @@
+<nav-pop></nav-pop>
+<div class="container">
+  <div class="card mt-2" *ngFor="let ativo of ativos">
+    <div class="card-body bg-transparent rounded">
+      <p class="mb-0 p-0"><b>Ativo: </b>{{ ativo.nome }}</p>
+      <p class="mt-0 p-0"><small><b>Descrição: </b> {{ ativo.descricao }}</small></p>
+      <p><strong>Situação: </strong><b *ngIf="ativo.valor > 0" style="color: #34ce57">R$ {{ativo.valor}}</b><b *ngIf="ativo.valor < 0" style="color: #FF0000">R$ {{ativo.valor}}</b></p>
+      <p class="text-right">
+        <button (click)="details({id: ativo._id})" type="button" class="btn btn-info mx-1">Detalhes</button>
+        <button (click)="add({tipo: 'pago', id: ativo._id})" type="button" class="btn btn-success mx-1"><i class="far fa-plus-square"></i></button>
+        <button (click)="add({tipo: 'gasto', id: ativo._id})" type="button" class="btn btn-danger mx-1"><i class="fas fa-minus"></i></button>
+      </p>
+    </div>
+  </div>
+</div>

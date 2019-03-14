@@ -1,0 +1,18 @@
+
+<a routerLink="/home/ativos/add" routerLinkActive="active" ><button class="btn-fab" mat-mini-fab><i class="far fa-plus-square"></i></button></a>
+
+<mat-card *ngFor="let ativo of ativos" class="card mt-2">
+    <mat-card-content class="card-body bg-transparent rounded">
+        <p class="mb-0 p-0">{{ ativo.nome }}</p>
+        <p class="mt-0 p-0"><small>{{ ativo.descricao }}</small></p>
+
+            <strong>Situação: </strong>
+        <div *ngIf="ativo.valor >= 0" style="color: #34ce57" >R$ {{ativo.valor}}</div>
+        <div *ngIf="ativo.valor < 0" style="color: #FF0000" >R$ {{ativo.valor}}</div>
+
+        <p class="text-right">
+            <button mat-button (click)="editar(ativo)" type="button" class="btn btn-info mx-1"><i class="fas fa-edit"></i></button>
+            <button mat-button *ngIf="ativo.nome != 'Pessoal'" (click)="excluir(ativo._id)" type="button" class="btn btn-danger mx-1"><i class="fas fa-trash-alt"></i></button>
+        </p>
+    </mat-card-content>
+</mat-card>
