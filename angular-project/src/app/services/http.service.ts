@@ -10,7 +10,7 @@ export class HttpService {
     constructor(private http: HttpClient){}
     //private url = 'http://192.168.15.3:8081/';
     //private url = 'https://haagsmagfapp.herokuapp.com/';
-    private url = 'http://ec2-3-86-177-94.compute-1.amazonaws.com:8082/';
+    private url = 'http://haagsma.com.br:8081/';
 
     public getUrl(){
         return this.url;
