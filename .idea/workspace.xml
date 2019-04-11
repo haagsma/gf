@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41dc26c1-3249-42e2-b661-91bc5ae1500f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/ionic/resources/android/icon/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ionic/src/assets/img/ganhou.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ionic/src/assets/img/gastou.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/src/pages/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ionic/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ionic/src/pages/home/home.ts" afterDir="false" />
-    </list>
+    <list default="true" id="41dc26c1-3249-42e2-b661-91bc5ae1500f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +10,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/node/config/db.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -57,7 +54,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/angular-project/src/app/services/params.service.ts" />
         <option value="$PROJECT_DIR$/angular-project/src/assets/css/standard.css" />
         <option value="$PROJECT_DIR$/ionic/src/pages/login/login.ts" />
         <option value="$PROJECT_DIR$/angular-project/src/app/views/inicial/cadastro/cadastro.component.ts" />
@@ -108,6 +104,7 @@
         <option value="$PROJECT_DIR$/angular-project/src/app/services/authguard.service.ts" />
         <option value="$PROJECT_DIR$/angular-project/src/app/services/http.service.ts" />
         <option value="$PROJECT_DIR$/angular-project/src/index.html" />
+        <option value="$PROJECT_DIR$/node/config/db.js" />
       </list>
     </option>
   </component>
@@ -207,18 +204,13 @@
             <path>
               <item name="gestaof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestaof" type="462c0819:PsiDirectoryNode" />
-              <item name="angular-project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gestaof" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gestaof" type="462c0819:PsiDirectoryNode" />
               <item name="node" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gestaof" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestaof" type="462c0819:PsiDirectoryNode" />
               <item name="node" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,18 +285,19 @@
       <workItem from="1551536510066" duration="20057000" />
       <workItem from="1551806611456" duration="2561000" />
       <workItem from="1552161313480" duration="542000" />
+      <workItem from="1555023418216" duration="277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206903000" />
+    <option name="totallyTimeSpent" value="207180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16197917" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5005208" side_tool="true" weight="0.26354942" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
@@ -316,6 +309,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -336,20 +330,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular-project/src/app/services/params.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ionic/src/pages/pessoas-empresas-add/pessoas-empresas-add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="90" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular-project/src/app/views/home/home.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -668,6 +648,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/config/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
         </state>
       </provider>
     </entry>
