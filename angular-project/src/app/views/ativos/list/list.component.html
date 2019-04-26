@@ -7,8 +7,8 @@
         <p class="mt-0 p-0"><small>{{ ativo.descricao }}</small></p>
 
             <strong>Situação: </strong>
-        <div *ngIf="ativo.valor >= 0" style="color: #34ce57" >R$ {{ativo.valor}}</div>
-        <div *ngIf="ativo.valor < 0" style="color: #FF0000" >R$ {{ativo.valor}}</div>
+        <div *ngIf="ativo.valor >= 0" style="color: #34ce57" >R$ {{ativo.valor?ativo.valor: 0.00  | currency:'BRL':true }}</div>
+        <div *ngIf="ativo.valor < 0" style="color: #FF0000" >R$ {{ativo.valor?ativo.valor: 0.00  | currency:'BRL':true }}</div>
 
         <p class="text-right">
             <button mat-button (click)="editar(ativo)" type="button" class="btn btn-info mx-1"><i class="fas fa-edit"></i></button>

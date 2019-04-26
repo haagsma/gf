@@ -21,7 +21,7 @@ export class MenuUsuarioComponent implements OnInit{
         this.getImgPerfil();
     }
     onError(){
-
+      this.fotoChoosed = false;
     }
     home(){
         document.location.reload();
@@ -31,6 +31,13 @@ export class MenuUsuarioComponent implements OnInit{
     }
     getImgPerfil(){
         this.fotoChoosed = this.db.getUrl()+'uploads/perfil-'+this.userr.getDados()._id+'.png?'+Math.random();
+    }
+    getNome(){
+      if(this.userr.getDados().nome.length >= 20 ){
+        return this.userr.getDados().nome.slice(0,19);
+      }else {
+        return this.userr.getDados().nome;
+      }
     }
 
 

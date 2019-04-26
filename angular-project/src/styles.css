@@ -7,8 +7,17 @@
 .text-danger {
     color: red;
 }
-.mt-2{
-    margin-top: 2px;
+.text-orange {
+  color: #FF8000;
+}
+.text-blue-light {
+  color: #00FFFF;
+}
+.text-green-dark {
+  color: #0B6138;
+}
+.text-blue {
+  color: #0040FF;
 }
 a {
     text-decoration: none;

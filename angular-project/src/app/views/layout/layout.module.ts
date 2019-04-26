@@ -1,4 +1,4 @@
-import {NgModule} from "@angular/core";
+import {LOCALE_ID, NgModule} from "@angular/core";
 import {AppCssModule} from "../../app-css.module";
 import {MenuUsuarioComponent} from "./menu-usuario/menu-usuario.component";
 import {LayoutRoutingModule} from "./layout-routing.module";
@@ -14,10 +14,13 @@ import {BrowserModule} from "@angular/platform-browser";
         AppCssModule,
         LayoutRoutingModule,
         FormsModule,
-        BrowserModule
+        BrowserModule,
     ],
     exports: [
         MenuUsuarioComponent
+    ],
+    providers: [
+
     ]
 })
 

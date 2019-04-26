@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
 
@@ -38,7 +38,7 @@ import {AuthGuardService} from "./services/authguard.service";
     HomeModule,
     LayoutModule,
     CreditosDebitosModule,
-      ControleModule,
+    ControleModule
   ],
   providers: [
       HttpService,

@@ -106,7 +106,6 @@ router.post('/edit', (req, res)=>{
     });
 });
 router.post('/upload', upload.single('perfil'),(req, res)=>{
-    console.log('upload: ',req.file)
     res.send('sucesso');
 });
 

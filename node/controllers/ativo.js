@@ -5,7 +5,7 @@ require('../models/ativo');
 const Ativo = mongoose.model('ativos');
 
 router.post('/list', (req, res)=>{
-    Ativo.find({user: req.body.id}).then((ativos)=>{
+    Ativo.find({user: req.body.id}).sort({_id: 'desc'}).then((ativos)=>{
         res.send({tipo: 1, data: ativos});
     }).catch((err)=>{
         res.send({tipo:0, resposta: 'Erro ao carregar a lista de Pessoas e Empresas!'})

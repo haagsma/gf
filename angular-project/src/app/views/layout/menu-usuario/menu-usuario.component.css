@@ -43,6 +43,7 @@ mat-sidenav {
 }
 .area-perfil {
     padding-top: 20px;
+  padding-bottom: 10px;
     background-image: url('/assets/img/background-perfil.jpg');
     width: 100%;
 }
@@ -61,16 +62,25 @@ mat-sidenav {
 }
 .item-menu {
     list-style-type: none;
+    display: grid;
+    margin-top: 30px;
+    grid-template-areas: 'icon text';
+  grid-template-columns: 50px auto;
 
 }
 .item-menu a.link-menu {
     color: #000;
     font-size: 20px;
-    padding-top: 10px;
-    padding-left: 10px;
     text-shadow: 1px 1px 2px #000;
+    grid-area: text;
 }
 .item-menu a.icone {
     color: #000;
     font-size: 30px;
+    grid-area: icon;
+  width: 50px;
+}
+.text-white {
+  color: #FFFFFF;
+  font-weight: lighter
 }

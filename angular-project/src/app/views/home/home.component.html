@@ -6,7 +6,7 @@
             </div>
             <div class="text-center mt-2">
                 <h5>Você já ganhou</h5>
-                <p><b class="text-success">R$ {{ total.ganho }}</b></p>
+                <p><b class="text-success">{{ total.ganho | currency:'BRL':true }}</b></p>
             </div>
         </mat-card-content>
     </mat-card>
@@ -17,8 +17,8 @@
             </div>
             <div class="text-center mt-2">
                 <h5>Você já gastou</h5>
-                <p><b class="text-danger" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
-                    R$ {{ total.gasto }}
+                <p><b class="text-danger" >
+                    {{ total.gasto | currency:'BRL':true }}
                 </b></p>
             </div>
         </mat-card-content>

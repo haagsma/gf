@@ -19,33 +19,33 @@
                     <img class="rounded-circle foto-perfil" [src]="DomSanitizer.bypassSecurityTrustUrl(fotoChoosed)" (error)="onError()">
                 </div>
                 <div class="mt-2 text-center text-lg">
-                    <label class="text-white">{{ user.nome }}</label>
+                    <label class="text-white">{{ getNome() }}</label>
                 </div>
             </div>
             <div class="list-menu">
                 <ul>
-                    <li class="item-menu mt-2" (click)="home()">
-                        <a href="" class="icone text-primary"><i class="fas fa-home"></i></a>
+                    <li class="item-menu" (click)="home()">
+                        <a href="" class="icone text-primary"><i class="text-blue-light fas fa-home"></i></a>
                         <a class="link-menu" href="#" >Inicio</a>
                     </li>
-                    <li class="item-menu mt-2">
-                        <a routerLink="/home/perfil"  (click)="sidenav.toggle()" class="icone "><i class="fas fa-user-circle"></i></a>
+                    <li class="item-menu">
+                        <a routerLink="/home/perfil"  (click)="sidenav.toggle()" class="icone"><i class="text-green-dark fas fa-user-circle"></i></a>
                         <a class="link-menu" routerLink="/home/perfil" (click)="sidenav.toggle()">Perfil</a>
                     </li>
-                    <li class="item-menu mt-2" >
-                        <a class="icone text-info" (click)="pessoasEmpresas();sidenav.toggle()"><i class="fas fa-users"></i></a>
-                        <a class="link-menu" (click)="pessoasEmpresas();sidenav.toggle()" >Pessoas/Empresas</a>
+                    <li class="item-menu" >
+                        <a class="icone text-info" (click)="pessoasEmpresas();sidenav.toggle()"><i class="text-blue fas fa-users"></i></a>
+                        <a class="link-menu" (click)="pessoasEmpresas();sidenav.toggle()" >Pessoas / Empresas</a>
                     </li>
-                    <li class="item-menu mt-2">
-                        <a routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone text-success"><i class="fas fa-hand-holding-usd"></i></a>
-                        <a class="link-menu" routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active">Créditos/Débitos</a>
+                    <li class="item-menu">
+                        <a routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone"><i class="text-orange fas fa-hand-holding-usd"></i></a>
+                        <a class="link-menu" routerLink="/home/creditos-debitos" (click)="sidenav.toggle()"  routerLinkActive="active">Créditos / Débitos</a>
                     </li>
-                    <li class="item-menu mt-2">
-                        <a  routerLink="/home/controle/gastos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone text-danger"><i class="far fa-credit-card"></i></a>
+                    <li class="item-menu">
+                        <a  routerLink="/home/controle/gastos" (click)="sidenav.toggle()"  routerLinkActive="active" class="icone"><i class="text-danger far fa-credit-card"></i></a>
                         <a (click)="sidenav.toggle()"  class="link-menu" routerLink="/home/controle/gastos" routerLinkActive="active" >Gastos</a>
                     </li>
-                    <li class="item-menu mt-2">
-                        <a (click)="sidenav.toggle()"  routerLink="/home/controle/ganhos" routerLinkActive="active" class="icone text-warning"><i class="far fa-money-bill-alt"></i></a>
+                    <li class="item-menu">
+                        <a (click)="sidenav.toggle()"  routerLink="/home/controle/ganhos" routerLinkActive="active" class="icone"><i class="text-success far fa-money-bill-alt"></i></a>
                         <a (click)="sidenav.toggle()"  class="link-menu" routerLink="/home/controle/ganhos" routerLinkActive="active">Ganhos</a>
                     </li>
                     <!--<li class="item-menu mt-2">

@@ -1,11 +1,11 @@
 import {NgModule} from "@angular/core";
 import {
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule, MatIconModule,
-    MatInputModule,
-    MatSelectModule,
-    MatSidenavModule, MatToolbarModule
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule, MatListModule,
+  MatSelectModule,
+  MatSidenavModule, MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NgxCurrencyModule} from "ngx-currency";
@@ -27,7 +27,8 @@ import {BrowserModule} from "@angular/platform-browser";
         MatToolbarModule,
         NgxCurrencyModule,
         FormsModule,
-        BrowserModule
+        BrowserModule,
+        MatListModule
     ]
 })
 

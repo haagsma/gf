@@ -1,5 +1,5 @@
 
-<a routerLink="/home/ativos/add" routerLinkActive="active" ><button class="btn-fab" mat-mini-fab><i class="far fa-plus-square"></i></button></a>
+<!--<a routerLink="/home/ativos/add" routerLinkActive="active" ><button class="btn-fab" mat-mini-fab><i class="far fa-plus-square"></i></button></a>-->
 
 <mat-card *ngFor="let ativo of ativos" class="card mt-2">
     <mat-card-content class="card-body bg-transparent rounded">
@@ -8,7 +8,7 @@
 
         <strong>Situação: </strong>
         <div *ngIf="ativo.valor >= 0" style="color: #34ce57" >R$ {{ativo.valor?ativo.valor: 0.00 }}</div>
-        <div *ngIf="ativo.valor < 0" style="color: #FF0000" >R$ {{ativo.valor}}</div>
+        <div *ngIf="ativo.valor < 0" style="color: #FF0000" >R$ {{ativo.valor?ativo.valor: 0.00 }}</div>
 
         <p class="text-right">
             <button mat-button (click)="details({id: ativo._id})" type="button" class="btn btn-info mx-1">Detalhes</button>

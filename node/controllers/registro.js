@@ -7,7 +7,7 @@ require('../models/ativo');
 const Ativo = mongoose.model('ativos');
 
 router.post('/detalhes', (req, res)=>{
-    Registro.find({ativo: req.body.id}).populate('ativo').sort({data: 'desc'}).then((registros)=>{
+    Registro.find({ativo: req.body.id}).populate('ativo').sort({_id: 'desc'}).then((registros)=>{
         if(registros){
             res.send({tipo:1, data:registros});
         }else{
@@ -17,53 +17,75 @@ router.post('/detalhes', (req, res)=>{
         res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros!'+err})
     });
 });
-router.post('/gastos', (req, res)=>{
+router.post('/gastos',async (req, res)=>{
     let envia = [];
-    Ativo.find({user: req.body.id}).then((ativos)=>{
-        ativos.forEach((item, index)=> {
-            Registro.find({ativo: item._id, tipo: 'gasto'}).sort({data: 'desc'}).then((registros)=>{
-                if(registros && registros.length > 0) {
-                    registros.forEach((itemRegistro)=>{
-                        envia.push(itemRegistro);
-                    });
-
-                }
-                if (index == (ativos.length - 1)) {
+    await Ativo.find({user: req.body.id}).then(async (ativos)=>{
+        await ativos.forEach(async (item, index)=> {
+            let cursor = await Registro.find({ativo: item._id, tipo: 'gasto'}).sort({_id: 'desc'}).cursor();
+            cursor.on('data', async (data)=>{
+                envia.push(data);
+            });
+            cursor.on('close', ()=>{
+                if (index === (ativos.length - 1)) {
                     console.log(envia);
                     res.send({tipo: 1, data: envia});
                 }
-            }).catch((err)=>{
-                res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros!'+err})
             });
+
         })
     }).catch((err)=>{
         res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros dos ativos!'+err})
     });
 });
-router.post('/ganhos', (req, res)=>{
+router.post('/ganhos', async (req, res)=>{
     let envia = [];
-    Ativo.find({user: req.body.id}).then((ativos)=>{
-        ativos.forEach((item, index)=> {
-            Registro.find({ativo: item._id, tipo: 'pago'}).sort({data: 'desc'}).then((registros)=>{
-                if(registros && registros.length > 0) {
-                    registros.forEach((itemRegistro)=>{
-                        envia.push(itemRegistro);
-                    });
-
-                }
-                if (index == (ativos.length - 1)) {
+    await Ativo.find({user: req.body.id}).then(async (ativos)=>{
+        await ativos.forEach(async (item, index)=> {
+            let cursor = await Registro.find({ativo: item._id, tipo: 'pago'}).sort({_id: 'desc'}).cursor();
+            cursor.on('data', async (data)=>{
+                envia.push(data);
+            });
+            cursor.on('close', ()=>{
+                if (index === (ativos.length - 1)) {
                     console.log(envia);
                     res.send({tipo: 1, data: envia});
                 }
-            }).catch((err)=>{
-                res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros!'+err})
             });
+
         })
     }).catch((err)=>{
         res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros dos ativos!'+err})
     });
 });
 
+router.post('/total',async (req, res)=>{
+    let total = {
+        gasto: 0,
+        ganho: 0
+    };
+    await Ativo.find({user: req.body.id}).then( async (ativos)=>{
+        await ativos.forEach( async (item, index)=> {
+            let cursor = await Registro.find({ativo: item._id}).sort({_id: 'desc'}).cursor();
+            if(item){
+                await cursor.on('data', async (data)=>{
+                    if(data.tipo === 'pago'){
+                        total.ganho += Number(data.valor);
+                    }else{
+                        total.gasto += Number(data.valor);
+                    }
+                });
+                cursor.on('close', ()=>{
+                    if (index >= (ativos.length - 1)) {
+                        res.send({tipo: 1, data: total});
+                    }
+                });
+            }
+        });
+    }).catch((err)=>{
+        res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros dos ativos!'+err})
+    });
+
+});
 router.post('/add', (req, res)=>{
     new Registro(req.body).save().then((registro)=>{
         Ativo.findOne({_id: req.body.ativo}).then((usuario)=>{
@@ -87,34 +109,5 @@ router.post('/add', (req, res)=>{
     }).catch((err)=>{
         res.send({tipo:0, resposta: 'Houve um erro ao salvar o registro, tente novamente!'+err})
     })
-});
-router.post('/total', (req, res)=>{
-    let total = {
-        gasto: 0,
-        ganho: 0
-    };
-    Ativo.find({user: req.body.id}).then((ativos)=>{
-        ativos.forEach((item, index)=> {
-            Registro.find({ativo: item._id}).sort({data: 'desc'}).then((registros)=>{
-                if(registros && registros.length > 0) {
-                    registros.forEach((itemRegistro)=>{
-                        if(itemRegistro.tipo == 'pago'){
-                            total.ganho += Number(itemRegistro.valor);
-                        }else{
-                            total.gasto += Number(itemRegistro.valor);
-                        }
-                    });
-
-                }
-                if (index == (ativos.length - 1)) {
-                    res.send({tipo: 1, data: total});
-                }
-            }).catch((err)=>{
-                res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros!'+err})
-            });
-        })
-    }).catch((err)=>{
-        res.send({tipo:0, resposta: 'Houve um erro ao consultar os registros dos ativos!'+err})
-    });
 });
 module.exports = router;

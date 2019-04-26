@@ -2,8 +2,8 @@
     <mat-card-content class="card-body bg-transparent rounded">
         <p class="m-0 p-0"><strong>Descrição: </strong>{{ registro.descricao }}</p>
         <p><strong>Valor: </strong>
-            <strong *ngIf="registro.tipo == 'pago'" class="text-success">R$ {{ registro.valor }}</strong>
-            <strong *ngIf="registro.tipo == 'gasto'" class="text-danger">R$ {{ registro.valor }}</strong>
+            <strong *ngIf="registro.tipo == 'pago'" class="text-success">{{ registro.valor  | currency:'BRL':true }}</strong>
+            <strong *ngIf="registro.tipo == 'gasto'" class="text-danger">{{ registro.valor  | currency:'BRL':true }}</strong>
         </p>
         <p class="text-right m-0 p-0" style="text-align: right"><small class="ml-1">Data: {{ registro.data.slice(0, 10) }}</small></p>
     </mat-card-content>
