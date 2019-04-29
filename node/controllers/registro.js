@@ -19,7 +19,7 @@ router.post('/detalhes', (req, res)=>{
 });
 router.post('/gastos',async (req, res)=>{
     let envia = [];
-    await Ativo.find({user: req.body.id}).then(async (ativos)=>{
+    await Ativo.find({user: req.body.id}).sort({_id: 'desc'}).then(async (ativos)=>{
         await ativos.forEach(async (item, index)=> {
             let cursor = await Registro.find({ativo: item._id, tipo: 'gasto'}).sort({_id: 'desc'}).cursor();
             cursor.on('data', async (data)=>{
@@ -39,7 +39,7 @@ router.post('/gastos',async (req, res)=>{
 });
 router.post('/ganhos', async (req, res)=>{
     let envia = [];
-    await Ativo.find({user: req.body.id}).then(async (ativos)=>{
+    await Ativo.find({user: req.body.id}).sort({_id: 'desc'}).then(async (ativos)=>{
         await ativos.forEach(async (item, index)=> {
             let cursor = await Registro.find({ativo: item._id, tipo: 'pago'}).sort({_id: 'desc'}).cursor();
             cursor.on('data', async (data)=>{
@@ -87,6 +87,8 @@ router.post('/total',async (req, res)=>{
 
 });
 router.post('/add', (req, res)=>{
+    // let novoRegistro = req.body;
+    // novoRegistro.data = new Date();
     new Registro(req.body).save().then((registro)=>{
         Ativo.findOne({_id: req.body.ativo}).then((usuario)=>{
             let temp;

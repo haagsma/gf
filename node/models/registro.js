@@ -19,7 +19,7 @@ const Registro = new Schema({
     },
     data: {
         type: Date,
-        default: Date.now()
+        default: new Date()
     }
 });
 mongoose.model('registros', Registro);
