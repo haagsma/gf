@@ -21,7 +21,7 @@ router.post('/gastos',async (req, res)=>{
     let envia = [];
     await Ativo.find({user: req.body.id}).sort({_id: 'desc'}).then(async (ativos)=>{
         await ativos.forEach(async (item, index)=> {
-            let cursor = await Registro.find({ativo: item._id, tipo: 'gasto'}).sort({_id: 'desc'}).cursor();
+            let cursor = await Registro.find({ativo: item._id, tipo: 'gasto'}).populate('ativo').sort({_id: 'desc'}).cursor();
             cursor.on('data', async (data)=>{
                 envia.push(data);
             });
@@ -41,7 +41,7 @@ router.post('/ganhos', async (req, res)=>{
     let envia = [];
     await Ativo.find({user: req.body.id}).sort({_id: 'desc'}).then(async (ativos)=>{
         await ativos.forEach(async (item, index)=> {
-            let cursor = await Registro.find({ativo: item._id, tipo: 'pago'}).sort({_id: 'desc'}).cursor();
+            let cursor = await Registro.find({ativo: item._id, tipo: 'pago'}).populate('ativo').sort({_id: 'desc'}).cursor();
             cursor.on('data', async (data)=>{
                 envia.push(data);
             });
