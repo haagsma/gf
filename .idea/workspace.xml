@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41dc26c1-3249-42e2-b661-91bc5ae1500f" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/angular-project/src/app/views/creditos-debitos/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/angular-project/src/app/views/creditos-debitos/add/add.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +36,8 @@
       <file leaf-file-name="add.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular-project/src/app/views/creditos-debitos/add/add.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+            <state relative-caret-position="372">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -314,12 +316,12 @@
       <workItem from="1556627758117" duration="2044000" />
       <workItem from="1557167156466" duration="2179000" />
       <workItem from="1557173095569" duration="587000" />
-      <workItem from="1557180967192" duration="146000" />
+      <workItem from="1557180967192" duration="160000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238966000" />
+    <option name="totallyTimeSpent" value="238980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -334,7 +336,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1703125" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32975295" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5005208" side_tool="true" weight="0.26354942" />
       <window_info anchor="right" id="Database" order="3" />
@@ -342,7 +344,7 @@
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49947917" visible="true" weight="0.35494155" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49947917" visible="true" weight="0.35494155" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -638,8 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/angular-project/src/app/views/creditos-debitos/add/add.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+        <state relative-caret-position="372">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
