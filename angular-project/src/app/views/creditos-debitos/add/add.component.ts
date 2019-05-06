@@ -26,6 +26,7 @@ export class CreditosDebitosAddComponent implements OnInit{
         if(form.valid){
             form.value.ativo = this.params.id;
             form.value.tipo = this.params.tipo;
+            form.value.data = new Date();
             this.db.post('registro/add', form.value).subscribe((res:any)=>{
                 if(res.tipo == 0){
                     swal.fire('Opss', res.resposta, 'error')
