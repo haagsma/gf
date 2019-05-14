@@ -5,6 +5,7 @@ require('../models/registro');
 const Registro = mongoose.model('registros');
 require('../models/ativo');
 const Ativo = mongoose.model('ativos');
+const moment = require('moment');
 
 router.post('/detalhes', (req, res)=>{
     Registro.find({ativo: req.body.id}).populate('ativo').sort({_id: 'desc'}).then((registros)=>{
@@ -87,8 +88,7 @@ router.post('/total',async (req, res)=>{
 
 });
 router.post('/add', (req, res)=>{
-    // let novoRegistro = req.body;
-    // novoRegistro.data = new Date();
+    req.body.data  = new Date(moment());
     new Registro(req.body).save().then((registro)=>{
         Ativo.findOne({_id: req.body.ativo}).then((usuario)=>{
             let temp;

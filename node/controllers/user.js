@@ -10,6 +10,7 @@ const Ativo = mongoose.model('ativos');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
 const fs = require('fs');
+const moment = require('moment');
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
         cb(null, './uploads/');
@@ -107,6 +108,13 @@ router.post('/edit', (req, res)=>{
 });
 router.post('/upload', upload.single('perfil'),(req, res)=>{
     res.send('sucesso');
+});
+router.get('/teste2850928059280958209385023j02j3482j3984j2934j2934j', (req, res)=>{
+    res.send(
+        new Date(moment()).toString()+'<br>'+
+        moment().format("DD/MM/YYYY HH:mm")+'<br>'+
+        moment('14/05/2019 09:50', "DD/MM/YYYY HH:mm")
+    );
 });
 
 
